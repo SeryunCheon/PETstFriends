@@ -253,7 +253,7 @@ public class TipBoardController {
 		model.addAttribute("tipComment", tipService.readCommentBoard(boardname, boardno));
 		System.out.println("코멘트 파람 확인 :"+tipService.readCommentBoard(boardname, boardno));
 //		return "Tipboard/ReadTipBoard";??????????0913
-		return "Tipboard/selectOneBoardtip";
+		return "Tipboard/ReadTipBoard11";
 	}
 	
 	//------------------------------------------- TIp정보 게시판 글쓰기 폼	

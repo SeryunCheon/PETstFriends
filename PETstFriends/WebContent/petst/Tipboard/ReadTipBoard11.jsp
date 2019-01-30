@@ -72,9 +72,9 @@ $(document).ready(function(){
 				var commentStr = '';
 				for(var i in tList){
 					if(tList[i].tipComments_commentno == tList[i].tipComments_parent){
-						commentStr +='<tr><td colspan="2" style="text-align: left;">닉네임'+tList[i].tipComments_nickname+'</td>'
+						commentStr +='<tr><td colspan="2" style="text-align: left;">'+tList[i].tipComments_nickname+'</td>'
 					}else{
-						commentStr +='<tr><td class="reTD"></td><td><i class="fa fa-level-up fa-rotate-90"></i>&nbsp;닉네임'
+						commentStr +='<tr><td class="reTD"></td><td><i class="fa fa-level-up fa-rotate-90"></i>&nbsp;'
 						+tList[i].tipComments_nickname+'</td>'
 					}
 					commentStr += '<td class="btnTD">날짜'+tList[i].tipComments_writeDate+'</td></tr><tr">';
@@ -582,12 +582,12 @@ a {
 							<!-- 							 <span class="comment"> -->
 							<%-- 							 <a class="imgSelect">♥작성자:  ${tipboard.tipBoard_userId} </a> --%>
 							<!-- 							 </span>	 -->
-							<a href="#layer1" id="jak" class="btn-example">♥ 작성자:
+							<a href="#layer1" id="jak" class="btn-example"> 작성자:
 								${tipboard.tipBoard_userId} </a>
-             <i class="fa fa-folder-open-o"></i> <a
-				href="writeReportForm.do?report_boardname=2&report_boardno=3&report_userId='dd'"
+<!--              <i class="fa fa-folder-open-o"></i> <a -->
+<!-- 				href="writeReportForm.do?report_boardname=2&report_boardno=3&report_userId='dd'" -->
 			
-				>신고하기</a>
+<!-- 				>신고하기</a> -->
 
 							<div id="layer1" class="pop-layer">
 								<div class="pop-container">
@@ -623,8 +623,9 @@ a {
 								고양이 tip 정보
 								</c:if> <c:if test="${tipboard.tipBoard_boardname eq '9'}">
 								토끼 tip 정보
-								</c:if> </span> <span class="comment"><i class="fa fa-comment-o"></i><a
-								href="">3 Comments(코멘트게시판이랑합칠것)</a></span>
+								</c:if> </span> 
+<!-- 								<SPAN CLASS="COMMENT"><I CLASS="FA FA-COMMENT-O"></I><A -->
+<!-- 								HREF="">3 COMMENTS(코멘트게시판이랑합칠것)</A></SPAN> -->
 						</div>
 						</header>
 						<div class="entry-content" style="border: 1px solid #eeeeee;">
@@ -719,7 +720,7 @@ a {
 								<li>
 									<button type="button"
 										style="background: none; color: #FFD232; border-color: #FFD232; border-radius: 5px; text-transform: uppercase; transition: all .4s; height: 40px;">
-										총 좋아요 수 <span id='like_cnt'>${tipboard.tipBoard_LikeCount}</span>
+										총 좋아요 수 <br><span id='like_cnt'>${tipboard.tipBoard_LikeCount}</span>
 										Likes
 									</button>
 								</li>
@@ -739,14 +740,14 @@ a {
 											<tr style="border-bottom: none;">
 												<c:if
 													test="${comment.tipComments_commentno == comment.tipComments_parent}">
-													<td colspan="2">닉네임${comment.tipComments_nickname}</td>
+													<td colspan="2">${comment.tipComments_nickname}</td>
 												</c:if>
 												<c:if
 													test="${comment.tipComments_commentno != comment.tipComments_parent}">
 													<td class="reTD"></td>
 													<td>
 														<div style="display: inline-block;"></div> <i
-														class="fa fa-level-up fa-rotate-90 fa-1x"></i>&nbsp;닉네임${comment.tipComments_nickname}
+														class="fa fa-level-up fa-rotate-90 fa-1x"></i>&nbsp;${comment.tipComments_nickname}
 													</td>
 												</c:if>
 												<td class="btnTD">날짜${comment.tipComments_writeDate }</td>
@@ -811,20 +812,16 @@ a {
 									</c:if>
 								</ul>
 
-							</div>
-						</c:if>
-						<div style="height: 30px;"></div>
 						<c:if test="${user_idCheck != null }">
 							<div id="testComment" class="top-comment"
 								style="border: 1px solid #eeeeee; background-color: #E1B771;">
 								<!--top comment-->
 
-								<img src="./Boot/images/comment.jpg" class="pull-left">
 								<%-- 							<h3 align="left">닉네임: ${user_idCheck}</h3> --%>
 								<p align="left" style="font-size: 16px;">닉네임:
 									${user_nickname}</p>
 								<p align="left">
-									<textarea id="reply_content" rows="3" cols="120"
+									<textarea id="reply_content" rows="3" cols="100"
 										name="reply_content" placeholder="댓글을 입력하세요."></textarea>
 								</p>
 								<button class="reply_save" name="reply_save"
@@ -833,6 +830,29 @@ a {
 
 							</div>
 						</c:if>
+
+							</div>
+						</c:if>
+						
+						<div style="height: 30px;"></div>
+<%-- 						<c:if test="${user_idCheck != null }"> --%>
+<!-- 							<div id="testComment" class="top-comment" -->
+<!-- 								style="border: 1px solid #eeeeee; background-color: #E1B771;"> -->
+<!-- 								top comment -->
+
+<%-- 															<h3 align="left">닉네임: ${user_idCheck}</h3> --%>
+<!-- 								<p align="left" style="font-size: 16px;">닉네임: -->
+<%-- 									${user_nickname}</p> --%>
+<!-- 								<p align="left"> -->
+<!-- 									<textarea id="reply_content" rows="3" cols="120" -->
+<!-- 										name="reply_content" placeholder="댓글을 입력하세요."></textarea> -->
+<!-- 								</p> -->
+<!-- 								<button class="reply_save" name="reply_save" -->
+<!-- 									style="background-color: #CD853F; color: white; font-family: 'NanumSquareRound', sans-serif; font-size: 15px; font-weight: bold; border: 1; border-color: #CD853F; border-radius: 5px;" -->
+<!-- 									value=0>댓글 등록</button> -->
+
+<!-- 							</div> -->
+<%-- 						</c:if> --%>
 						<!-- ★					 -->
 						<!--top comment end-->
 						<br> <br>
